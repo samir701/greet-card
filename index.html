@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Crush💕</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+
+<div id="drag-container">
+  <div id="spin-container">
+
+    <!-- pics inser here -->
+    <!-- <img src="img/signal-2024-12-30-200740_005.jpeg" alt="">
+    <img src="img/signal-2024-12-30-200740_006.jpeg" alt="">
+    <img src="img/signal-2025-01-06-215347_022.jpeg" alt="">
+    <img src="img/signal-2025-01-06-215347_015.jpeg" alt="">
+    <img src="img/signal-2025-01-06-215347_011.jpeg" alt="">
+    <img src="img/signal-2025-01-06-215347_006.jpeg" alt="">
+    <img src="img/signal-2025-01-06-215347_003.jpeg" alt="">
+    <img src="img/signal-2025-01-06-215347_013.jpeg" alt="">
+    <img src="img/signal-2025-01-06-215347_009.jpeg" alt="">
+    <img src="img/signal-2025-01-06-215347_006.jpeg" alt=""> -->
+
+
+    <img src="mom/1.jpg" alt="">
+    <img src="mom/2.jpg" alt="">
+    <img src="mom/3.jpg" alt="">
+    <img src="mom/4.jpg" alt="">
+    <img src="mom/5.jpg" alt="">
+    <img src="mom/6.jpg" alt="">
+    <img src="mom/7.jpg" alt="">
+    <img src="mom/8.jpg" alt="">
+    <img src="mom/9.jpg" alt="">
+    <img src="mom/10.jpg" alt="">
+ 
+    <p>LOVE YOU MOM</p>
+  </div>
+  <div id="ground"></div>
+</div>
+
+<div id="typewriter"></div>
+
+<div id="music-container"></div>
+<style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+  <script  src="./script.js"></script>
+
+  <script>
+    const text = "This is for you Mom....🥰😘";
+    const typingSpeed = 100; // Speed of typing in milliseconds
+    const erasingSpeed = 50; // Speed of erasing in milliseconds
+    const pauseBetween = 1000; // Pause between typing and erasing
+
+    let index = 0;
+    let isErasing = false;
+
+    function typeWriter() {
+        const element = document.getElementById("typewriter");
+
+        if (!isErasing) {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, typingSpeed);
+            } else {
+                setTimeout(() => {
+                    isErasing = true;
+                    setTimeout(typeWriter, erasingSpeed);
+                }, pauseBetween);
+            }
+        } else {
+            if (index > 0) {
+                element.innerHTML = text.substring(0, index - 1);
+                index--;
+                setTimeout(typeWriter, erasingSpeed);
+            } else {
+                isErasing = false;
+                setTimeout(typeWriter, typingSpeed);
+            }
+        }
+    }
+
+    typeWriter();
+</script>
+
+
+
+
+</body>
